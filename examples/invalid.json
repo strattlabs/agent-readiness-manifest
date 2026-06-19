@@ -1,0 +1,13 @@
+{
+  "version": "1",
+  "site": {
+    "name": "Broken Inc"
+  },
+  "resources": {
+    "llmsTxt": "llms.txt"
+  },
+  "unknownField": true,
+  "policy": {
+    "agentsAllowed": "yes"
+  }
+}

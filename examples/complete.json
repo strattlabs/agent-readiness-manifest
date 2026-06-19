@@ -1,0 +1,34 @@
+{
+  "$schema": "https://strattlabs.github.io/agent-readiness-manifest/schema/agent-readiness.schema.json",
+  "version": "0.1",
+  "site": {
+    "name": "Acme",
+    "url": "https://acme.example.com",
+    "description": "Acme sells widgets and offers a public API."
+  },
+  "resources": {
+    "llmsTxt": "/llms.txt",
+    "llmsFullTxt": "/llms-full.txt",
+    "mcp": "/.well-known/mcp.json",
+    "agentCard": "/.well-known/agent-card.json",
+    "openapi": "https://acme.example.com/openapi.json",
+    "sitemap": "/sitemap.xml",
+    "robots": "/robots.txt",
+    "markdownAlternates": "/docs/",
+    "termsOfService": "/legal/terms",
+    "privacyPolicy": "/legal/privacy"
+  },
+  "contact": {
+    "email": "agents@acme.example.com",
+    "url": "/contact"
+  },
+  "policy": {
+    "agentsAllowed": true,
+    "policyUrl": "/ai-policy",
+    "guidance": "Automated agents are welcome on public endpoints. Please send a descriptive User-Agent and contact us before high-volume use."
+  },
+  "metadata": {
+    "lastUpdated": "2026-06-20",
+    "generator": "hand-written"
+  }
+}

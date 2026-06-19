@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://strattlabs.github.io/agent-readiness-manifest/schema/agent-readiness.schema.json",
+  "title": "Agent Readiness Manifest",
+  "description": "A DECLARATION-ONLY descriptor that points to a site's existing agent-relevant resources and states its self-declared posture toward automated agents. This schema describes what a site DECLARES about itself.",
+  "type": "object",
+  "required": ["version", "site"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Optional pointer to this JSON Schema."
+    },
+    "version": {
+      "type": "string",
+      "description": "The manifest spec version this document targets.",
+      "pattern": "^\\d+\\.\\d+$",
+      "examples": ["0.1"]
+    },
+    "site": {
+      "type": "object",
+      "description": "Identity of the site publishing this manifest.",
+      "required": ["url"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "url": { "type": "string", "format": "uri" },
+        "description": { "type": "string" }
+      }
+    },
+    "resources": {
+      "type": "object",
+      "description": "Pointers to existing, separately-specified declaration surfaces. Each value is an absolute URL or a root-relative path. A pointer asserts that the resource is declared to exist at that location.",
+      "additionalProperties": false,
+      "properties": {
+        "llmsTxt": { "$ref": "#/$defs/ref" },
+        "llmsFullTxt": { "$ref": "#/$defs/ref" },
+        "mcp": { "$ref": "#/$defs/ref" },
+        "agentCard": { "$ref": "#/$defs/ref" },
+        "openapi": { "$ref": "#/$defs/ref" },
+        "sitemap": { "$ref": "#/$defs/ref" },
+        "robots": { "$ref": "#/$defs/ref" },
+        "markdownAlternates": { "$ref": "#/$defs/ref" },
+        "termsOfService": { "$ref": "#/$defs/ref" },
+        "privacyPolicy": { "$ref": "#/$defs/ref" }
+      }
+    },
+    "contact": {
+      "type": "object",
+      "description": "How an agent operator can reach a human about automated access.",
+      "additionalProperties": false,
+      "properties": {
+        "email": { "type": "string", "format": "email" },
+        "url": { "$ref": "#/$defs/ref" }
+      }
+    },
+    "policy": {
+      "type": "object",
+      "description": "The site's SELF-DECLARED posture toward automated agents. These are non-binding declarations of intent.",
+      "additionalProperties": false,
+      "properties": {
+        "agentsAllowed": {
+          "type": "boolean",
+          "description": "Whether the site declares that it welcomes automated-agent use. A self-declaration of intent."
+        },
+        "policyUrl": { "$ref": "#/$defs/ref" },
+        "guidance": {
+          "type": "string",
+          "description": "Free-text, non-binding guidance for agent operators (e.g. preferred contact, attribution requests, courtesy rate expectations)."
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "lastUpdated": { "type": "string", "format": "date" },
+        "generator": { "type": "string" }
+      }
+    }
+  },
+  "$defs": {
+    "ref": {
+      "type": "string",
+      "description": "An absolute URL (https://…) or a root-relative path (beginning with '/').",
+      "minLength": 1,
+      "pattern": "^(https?://|/).+"
+    }
+  }
+}
