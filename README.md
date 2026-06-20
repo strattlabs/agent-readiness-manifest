@@ -1,5 +1,7 @@
 # agent-readiness-manifest
 
+[![License: Apache 2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE) · [Spec site](https://strattlabs.github.io/agent-readiness-manifest/) · [strattlabs.com](https://strattlabs.com)
+
 An open, **declaration-only** spec and reference validator for the **Agent
 Readiness Manifest** — a single well-known descriptor that points to a site's
 agent-relevant resources and states its self-declared posture toward automated
@@ -111,3 +113,16 @@ pnpm build
 deliberately for a spec: its explicit patent grant reassures implementers adopting
 the vocabulary, which is exactly the broad, friction-free adoption a standard
 wants.
+
+---
+
+## Part of the Stratt Labs toolkit for the agentic web
+
+Small, standards-friendly tools from [Stratt Labs](https://strattlabs.com):
+
+- [llms-txt-kit](https://github.com/strattlabs/llms-txt-kit) — generate and
+  validate `llms.txt` / `llms-full.txt` files.
+- [schema-for-agents](https://github.com/strattlabs/schema-for-agents) — JSON-LD
+  recipes for agent-legible commerce and content.
+- [webmcp-starter](https://github.com/strattlabs/webmcp-starter) — a minimal
+  WebMCP reference page.
