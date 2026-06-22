@@ -25,8 +25,8 @@ the schema.
 ## Install
 
 ```bash
-pnpm add agent-readiness-manifest
-# or: npm i agent-readiness-manifest
+pnpm add @strattlabs/agent-readiness-manifest
+# or: npm i @strattlabs/agent-readiness-manifest
 ```
 
 Requires Node.js ≥ 18.18.
@@ -56,7 +56,7 @@ property it does not define is reported as an error.
 ## Library
 
 ```ts
-import { validateManifest, type AgentReadinessManifest } from 'agent-readiness-manifest';
+import { validateManifest, type AgentReadinessManifest } from '@strattlabs/agent-readiness-manifest';
 
 const manifest: AgentReadinessManifest = {
   version: '0.1',
@@ -74,7 +74,7 @@ if (!result.valid) {
 The JSON Schema is also importable for use in your own tooling:
 
 ```ts
-import { loadSchema } from 'agent-readiness-manifest';
+import { loadSchema } from '@strattlabs/agent-readiness-manifest';
 // or reference the file directly:
 import schema from 'agent-readiness-manifest/schema' with { type: 'json' };
 ```
